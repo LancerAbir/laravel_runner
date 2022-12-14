@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel Learning</title>
-</head>
-<body>
-    <h2>Kaka laravel shikhi</h2>
+<x-layout>
+    <h2>old home page</h2>
 
-    <a href="/about"> About </a>
-</body>
-</html>
+    <x-slot:title>
+        Custom Title
+    </x-slot>
+
+    @section('content')
+         <p>This is my body content.</p>
+    @endsection
+
+
+   
+</x-layout>
