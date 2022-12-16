@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+
 <x-layout>
     <h2>old home page</h2>
 
@@ -17,9 +18,6 @@
     @section('content')
          <p>This is my body content.</p>
     @endsection
-
-
-   
 </x-layout>
 </body>
 </html>
