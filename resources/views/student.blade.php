@@ -12,21 +12,31 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="flex">
+                        <div class="flex-1">
                         <h2> Create A Student Data </h2>
-                    
-                        <form action="{{route('studentForm')}}" method="post">
-                            @csrf
-                            <label> Student Name </label>
-                            <input type="text" name="name" class="form-control" placeholder="Type Student Name" /> <br/>
-                            <label> Student Contact Number </label>
-                            <input type="text" name="number" class="form-control" placeholder="Type Student Contact Number" /><br/>
-                            <label> Student Email Address </label>
-                            <input type="email" name="email" class="form-control" placeholder="Email Address" /><br/>
-                            <textarea name="description" cols="30" rows="10"  class="form-control" placeholder="Student Information"></textarea><br/>
-                            <button type="submit">Add Student Data</button>
-                        </form>
-                        
-                       
+                            <form action="{{route('studentForm')}}" method="post">
+                                @csrf
+                                <label> Student Name </label>
+                                <input type="text" name="name" class="form-control" placeholder="Type Student Name" /> <br/>
+                                <label> Student Contact Number </label>
+                                <input type="text" name="number" class="form-control" placeholder="Type Student Contact Number" /><br/>
+                                <label> Student Email Address </label>
+                                <input type="email" name="email" class="form-control" placeholder="Email Address" /><br/>
+                                <textarea name="description" cols="30" rows="10"  class="form-control" placeholder="Student Information"></textarea><br/>
+                                <button type="submit">Add Student Data</button>
+                            </form>
+                        </div>
+                        <div class="flex-2">
+                        <h2>  Student All Data </h2>
+
+                        <ul>
+                                @foreach ($studentData as $student)
+                                    <li>
+                                        <a href="">{{$student->name}}</a>
+                                    </li>
+                                @endforeach
+                            </ul>              
+                        </div>
                     </div>   
                 </div>
             </div>

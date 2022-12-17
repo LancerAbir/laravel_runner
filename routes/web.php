@@ -4,6 +4,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudentDataController;
 use App\Models\Post;
+use App\Models\StudentData;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +31,10 @@ Route::get('/contact', function () {
 });
 
 Route::get('/student', function () {
-    return view('student',);
+    $studentData = StudentData::all();
+    return view('student', [
+        'studentData' => $studentData
+    ]);
 });
 
 Route::get('/posts', function () {
