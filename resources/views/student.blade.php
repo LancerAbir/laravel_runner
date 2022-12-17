@@ -13,7 +13,7 @@
                 <div class="p-6 text-gray-900">
                     <div class="flex">
                         <div class="flex-1">
-                        <h2> Create A Student Data </h2>
+                            <h2> Create A Student Data </h2>
                             <form action="{{route('studentForm')}}" method="post">
                                 @csrf
                                 <label> Student Name </label>
@@ -26,7 +26,7 @@
                                 <button type="submit">Add Student Data</button>
                             </form>
                         </div>
-                        <div class="flex-2">
+                        <div class="flex-1">
                             <h2>  Student All Data</h2>
 
                             <ul>

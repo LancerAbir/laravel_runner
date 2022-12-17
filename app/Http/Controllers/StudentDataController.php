@@ -25,7 +25,12 @@ class StudentDataController extends Controller
         $studentData->date = now();
         $studentData->save();
 
-        return redirect()->route('dashboard');
+        return redirect()->route('student');
+    }
+
+    public function index() { 
+     
+        return view('studentInfo');
     }
 }
 

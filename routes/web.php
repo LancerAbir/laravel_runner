@@ -59,6 +59,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/addPost', [PostController::class, 'postFunction'])->name('addPost');
 
     // Add A Student Data
+    Route::get('/studentInfo', [StudentDataController::class, 'index'])->name('studentInfo');
     Route::post('/studentForm', [StudentDataController::class, 'studentFunction'])->name('studentForm');
 });
 
