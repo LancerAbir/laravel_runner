@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudentDataController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,10 @@ Route::get('/contact', function () {
     return view('contact',);
 });
 
+Route::get('/student', function () {
+    return view('student',);
+});
+
 Route::get('/posts', function () {
     return view('posts',);
 })->middleware(['auth', 'verified'])->name('dashboard');;
@@ -46,6 +51,9 @@ Route::middleware('auth')->group(function () {
 
     // add post
     Route::post('/addPost', [PostController::class, 'postFunction'])->name('addPost');
+
+    // Add A Student Data
+    Route::post('/studentForm', [StudentDataController::class, 'studentFunction'])->name('studentForm');
 });
 
 require __DIR__.'/auth.php';

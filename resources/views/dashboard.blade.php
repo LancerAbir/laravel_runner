@@ -27,7 +27,7 @@
                                     <li>
                                         <a href="">{{$post->title}}</a>
                                     </li>
-                                    @endforeach
+                                @endforeach
                             </ul>
                         </div>
                     </div>   
