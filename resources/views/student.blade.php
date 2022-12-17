@@ -17,25 +17,34 @@
                             <form action="{{route('studentForm')}}" method="post">
                                 @csrf
                                 <label> Student Name </label>
-                                <input type="text" name="name" class="form-control" placeholder="Type Student Name" /> <br/>
+                                <input type="text" value="{{old('title')}}" name="name" class="form-control" placeholder="Type Student Name" /> <br/>
                                 <label> Student Contact Number </label>
-                                <input type="text" name="number" class="form-control" placeholder="Type Student Contact Number" /><br/>
+                                <input type="text" value="{{old('title')}}" name="number" class="form-control" placeholder="Type Student Contact Number" /><br/>
                                 <label> Student Email Address </label>
-                                <input type="email" name="email" class="form-control" placeholder="Email Address" /><br/>
-                                <textarea name="description" cols="30" rows="10"  class="form-control" placeholder="Student Information"></textarea><br/>
+                                <input type="email" value="{{old('title')}}" name="email" class="form-control" placeholder="Email Address" /><br/>
+                                <textarea name="description"  cols="30" rows="10"  class="form-control" placeholder="Student Information">{{old('title')}}</textarea><br/>
                                 <button type="submit">Add Student Data</button>
                             </form>
                         </div>
                         <div class="flex-2">
-                        <h2>  Student All Data </h2>
+                            <h2>  Student All Data</h2>
 
-                        <ul>
+                            <ul>
                                 @foreach ($studentData as $student)
                                     <li>
                                         <a href="">{{$student->name}}</a>
                                     </li>
                                 @endforeach
-                            </ul>              
+                            </ul> 
+                            
+                            <h2> All Post Data</h2>
+                            <ul>
+                                @foreach ($posts as $post)
+                                    <li>
+                                        <a href="">{{$post->title}}</a>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
                     </div>   
                 </div>

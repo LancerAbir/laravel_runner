@@ -32,8 +32,10 @@ Route::get('/contact', function () {
 
 Route::get('/student', function () {
     $studentData = StudentData::all();
+    $postData = Post::all();
     return view('student', [
-        'studentData' => $studentData
+        'studentData' => $studentData,
+        'posts' => $postData
     ]);
 });
 
