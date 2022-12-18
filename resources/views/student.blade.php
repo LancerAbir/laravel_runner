@@ -14,6 +14,7 @@
                     <div class="flex">
                         <div class="flex-1">
                             <h2> Create A Student Data </h2>
+
                             <form action="{{route('studentForm')}}" method="post">
                                 @csrf
                                 <label> Student Name </label>

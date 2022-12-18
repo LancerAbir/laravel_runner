@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -38,6 +39,7 @@ Route::get('/student', function () {
         'posts' => $postData
     ]);
 });
+
 
 Route::get('/posts', function () {
     return view('posts',);
@@ -62,5 +64,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/studentInfo', [StudentDataController::class, 'index'])->name('studentInfo');
     Route::post('/studentForm', [StudentDataController::class, 'studentFunction'])->name('studentForm');
 });
+
+
+
 
 require __DIR__.'/auth.php';

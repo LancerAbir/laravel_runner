@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-
+use Flasher\Prime\FlasherInterface;
 class PostController extends Controller
 {
-    public function postFunction(Request $request) { 
+    public function postFunction(Request $request, FlasherInterface $flasher) { 
         $request->validate([
             'title' =>'required|string|min:3',
             'description' =>'required|string|min:10',
@@ -19,6 +19,7 @@ class PostController extends Controller
         $post->date = now();
         $post->save();
 
+        $flasher->addSuccess("Post created successfully");
         return redirect()-> route('dashboard');
     }
 }
