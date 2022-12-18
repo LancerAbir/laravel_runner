@@ -38,14 +38,7 @@
                                 @endforeach
                             </ul> 
                             
-                            <h2> All Post Data</h2>
-                            <ul>
-                                @foreach ($posts as $post)
-                                    <li>
-                                        <a href="">{{$post->title}}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
+                           
                         </div>
                     </div>   
                 </div>

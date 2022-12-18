@@ -31,20 +31,18 @@ Route::get('/contact', function () {
     return view('contact',);
 });
 
-Route::get('/student', function () {
-    $studentData = StudentData::all();
-    $postData = Post::all();
-    return view('student', [
-        'studentData' => $studentData,
-        'posts' => $postData
-    ]);
-});
-
 
 Route::get('/posts', function () {
     return view('posts',);
 })->middleware(['auth', 'verified'])->name('dashboard');;
 
+
+Route::get('/student', function () {
+    $studentData = StudentData::all();
+    return view('student', [
+        'studentData' => $studentData,
+    ]);
+});
 Route::get('/dashboard', function () {
     $postData = Post::all();
     return view('dashboard', [
