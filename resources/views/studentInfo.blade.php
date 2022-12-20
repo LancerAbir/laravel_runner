@@ -15,10 +15,9 @@
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto itaque eum blanditiis corrupti magnam natus, quibusdam maiores dicta facere ipsa.</p> 
                             <br/>
                             <h2>  Student All Data</h2>
+                           
 
-                            <ul>
-                              
-                            </ul> 
+                           
                         </div>
                         <div class="flex-1">
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error eaque hic laborum porro facilis ullam nihil accusantium. Excepturi, labore iure.</p>

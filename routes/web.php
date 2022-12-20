@@ -28,14 +28,12 @@ Route::get('/about', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');;
 
 Route::get('/contact', function () {
-    return view('contact',);
+    return view('contact');
 });
-
 
 Route::get('/posts', function () {
     return view('posts',);
 })->middleware(['auth', 'verified'])->name('dashboard');;
-
 
 Route::get('/student', function () {
     $studentData = StudentData::all();
@@ -43,6 +41,8 @@ Route::get('/student', function () {
         'studentData' => $studentData,
     ]);
 });
+
+
 Route::get('/dashboard', function () {
     $postData = Post::all();
     return view('dashboard', [
@@ -50,7 +50,11 @@ Route::get('/dashboard', function () {
     ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+
+
 Route::middleware('auth')->group(function () {
+    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -59,7 +63,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/addPost', [PostController::class, 'postFunction'])->name('addPost');
 
     // Add A Student Data
-    Route::get('/studentInfo', [StudentDataController::class, 'index'])->name('studentInfo');
+    Route::get('/studentInfo', [ StudentDataController::class, 'index'])->name('studentInfo');
     Route::post('/studentForm', [StudentDataController::class, 'studentFunction'])->name('studentForm');
 });
 

@@ -11,6 +11,10 @@
 <x-guest-layout>
     <h3>Un-authenticated Page</h3>
 </x-guest-layout>
+
+        <ul>
+          
+        </ul> 
     
 </body> 
 </html>
