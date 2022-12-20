@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\StudentData;
 use Illuminate\Http\Request;
 use Flasher\Prime\FlasherInterface;
+use Flasher\SweetAlert\Prime\SweetAlertFactory;
 
 class StudentDataController extends Controller
 {
@@ -35,7 +36,8 @@ class StudentDataController extends Controller
         return redirect()->route('student');
     }
 
-    public function index() { 
+    public function index(SweetAlertFactory $flasher) { 
+        $flasher->addSuccess('Data has been saved successfully!');
         return view('studentInfo');
     }
 }
