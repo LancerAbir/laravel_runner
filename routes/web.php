@@ -61,6 +61,9 @@ Route::middleware('auth')->group(function () {
 
     // add post
     Route::post('/addPost', [PostController::class, 'postFunction'])->name('addPost');
+    Route::get('/editPost/{id}', [PostController::class, 'editFunction'])->name('editPost');
+    Route::post('/updatePost/{id}', [PostController::class, 'updateFunction'])->name('updatePost');
+    Route::post('/deletePost/{id}', [PostController::class, 'deleteFunction'])->name('deletePost');
 
     // Add A Student Data
     Route::get('/studentInfo', [ StudentDataController::class, 'index'])->name('studentInfo');
