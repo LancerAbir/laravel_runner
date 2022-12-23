@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -68,6 +70,9 @@ Route::middleware('auth')->group(function () {
     // Add A Student Data
     Route::get('/studentInfo', [ StudentDataController::class, 'index'])->name('studentInfo');
     Route::post('/studentForm', [StudentDataController::class, 'studentFunction'])->name('studentForm');
+
+
+
 });
 
 

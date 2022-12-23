@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Notifications\PostCreated;
 use Illuminate\Http\Request;
 use Flasher\Prime\FlasherInterface;
+use Illuminate\Support\Facades\Auth;
+
 class PostController extends Controller
 {
     public function postFunction(Request $request, FlasherInterface $flasher) { 
@@ -24,9 +27,15 @@ class PostController extends Controller
         $post->date = now();
         $post->save();
 
-       
 
+
+        // Email Notifications By Mailtrap
+        $user = Auth::user();
+        $user->notify(new PostCreated($post));
+
+        // Flasher  
         $flasher->addSuccess("Post created successfully");
+
         return redirect()-> route('dashboard');
     }
 
